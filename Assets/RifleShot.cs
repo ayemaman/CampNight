@@ -25,7 +25,7 @@ public class RifleShot : MonoBehaviour
                 }
             }
             Destroy(collision.gameObject);
-            GameMaster.addKill();
+            
         }
     }
 }

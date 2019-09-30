@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
         public int hp;
         public int dmg;
         public bool canMove = true;
+        public int points;
         public int spawnChance;
     }
     
@@ -35,7 +36,8 @@ public class Enemy : MonoBehaviour
             Destroy(this.gameObject);
             if (dmg < 9001)
             {
-                GameMaster.addKill();
+                TouchScript.instance.comboScore += stats.points;
+                //GameMaster.addKill();
             }
         }
     }

@@ -98,6 +98,7 @@ MonoBehaviour:
     hp: 1
     dmg: 3
     canMove: 1
+    points: 200
     spawnChance: 5
   speed: 0
   xForce: 25

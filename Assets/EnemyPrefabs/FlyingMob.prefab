@@ -95,9 +95,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats:
-    hp: 1
+    hp: 2
     dmg: 2
     canMove: 1
+    points: 300
     spawnChance: 2
   speed: 3
   amplitude: 8

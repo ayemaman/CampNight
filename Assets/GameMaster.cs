@@ -17,7 +17,7 @@ public class GameMaster : MonoBehaviour
     public Transform spawnPoint2;
     public bool timerOn;
     public float roundTime;
-    private int score;
+    public int score;
 
     private int health;
     public int maxHealth;
@@ -334,12 +334,12 @@ public class GameMaster : MonoBehaviour
         AudioManager.instance.PlaySound("ouch");
     }
 
-    public static void addKill()
+    public static void UpdateScore()
     {
-        gm._addKill();
+        gm._UpdateScore();
     }
 
-    private void _addKill()
+    private void _UpdateScore()
     {
         KillText.text = "Score:" + ++score; 
     }

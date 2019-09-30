@@ -10,6 +10,8 @@ public class TouchScript : MonoBehaviour
     private Vector2 touchPosition;
     private Collider2D touchCollider;
 
+    public int comboScore = 0;
+
     // private Collider2D col;
     public GameObject touchParticle;
     public float radius;
@@ -104,8 +106,9 @@ public class TouchScript : MonoBehaviour
                 switch (currentItem)
                 {
 
+                    
                     case ItemsState.NOITEM:
-
+                        bool hitComboDown = false;
                         if (touch.phase == TouchPhase.Began)
                         {
                             AudioManager.instance.PlaySound("tap");
@@ -116,14 +119,14 @@ public class TouchScript : MonoBehaviour
                                 if (touchCollider.GetComponent<Enemy>() != null)
                                 {
                                     //Debug.Log(hitCombo);
-                                    hitCombo++;
+                                    instance.hitCombo++;
                                     //Debug.Log("Adding NOITEM: " + hitCombo);
                                    // Debug.Log(hitCombo);
                                     GameMaster.HitEnemy(touchCollider.gameObject, 1);
-                                    if (hitCombo > 1)
+                                    if (instance.hitCombo > 0)
                                     {
                                         
-                                        GameMaster.gm.ComboText.text = "x" + hitCombo;
+                                        GameMaster.gm.ComboText.text = comboScore+ "/n"+"x" + hitCombo;
                                         GameMaster.gm.ComboTextAnimator.SetTrigger("startAnimation");
                                     }
 
@@ -131,14 +134,21 @@ public class TouchScript : MonoBehaviour
                                 else
                                 {
 
-
                                     for (int i=0; i<GameMaster.gm.buttonsPos.Length;i++)
                                     {
                                         if (Vector2.Distance(new Vector2(Camera.main.ScreenToWorldPoint(GameMaster.gm.buttonsPos[i]).x, Camera.main.ScreenToWorldPoint(GameMaster.gm.buttonsPos[i]).y), touchPosition) > 1.5f)
                                         {
-                                            hitCombo = 0;
-                                            GameMaster.gm.ComboTextAnimator.SetTrigger("clearAnimation");
+                                            hitComboDown = true;
+                                            
                                         }
+                                    }
+                                    if (hitComboDown)
+                                    {
+                                        instance.hitCombo = 0;
+                                        instance.comboScore = 0;
+                                        GameMaster.UpdateScore();
+                                        GameMaster.gm.score += comboScore * hitCombo;
+                                        GameMaster.gm.ComboTextAnimator.SetTrigger("clearAnimation");
                                     }
 
                                 }
@@ -149,10 +159,17 @@ public class TouchScript : MonoBehaviour
                                 {
                                     if (Vector2.Distance(new Vector2(Camera.main.ScreenToWorldPoint(GameMaster.gm.buttonsPos[i]).x, Camera.main.ScreenToWorldPoint(GameMaster.gm.buttonsPos[i]).y), touchPosition) > 1.5f)
                                     {
-                                        
-                                        hitCombo = 0;
-                                        GameMaster.gm.ComboTextAnimator.SetTrigger("clearAnimation");
+                                        hitComboDown = true;
+                                       
                                     }
+                                }
+                                if (hitComboDown)
+                                {
+                                    instance.hitCombo = 0;
+                                    instance.comboScore = 0;
+                                    GameMaster.UpdateScore();
+                                    GameMaster.gm.score += comboScore * hitCombo;
+                                    GameMaster.gm.ComboTextAnimator.SetTrigger("clearAnimation");
                                 }
                             }
                         }

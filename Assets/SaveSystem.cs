@@ -51,7 +51,7 @@ public static class SaveSystem
         else
         {
             Debug.LogError("save file not found");
-            return null;
+            return new PlayerStats();
         }
     }
 

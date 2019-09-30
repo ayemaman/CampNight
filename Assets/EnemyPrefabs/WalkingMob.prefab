@@ -145,5 +145,6 @@ MonoBehaviour:
     hp: 1
     dmg: 1
     canMove: 1
+    points: 100
     spawnChance: 10
   speed: 100
