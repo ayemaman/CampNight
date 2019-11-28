@@ -10,10 +10,12 @@ public class RifleShot : MonoBehaviour
         {
             
             int hitCombo=++TouchScript.instance.hitCombo;
-            Debug.Log("Adding RIFLE: " + hitCombo);
-            if (hitCombo > 1)
+            TouchScript.instance.comboScore += collision.GetComponent<Enemy>().stats.points;
+           
+            if (hitCombo > 0)
             {
-                GameMaster.gm.ComboText.text = "x" + hitCombo;
+                
+                GameMaster.gm.ComboText.text = TouchScript.instance.comboScore + System.Environment.NewLine + "x" + hitCombo;
                 GameMaster.gm.ComboTextAnimator.SetTrigger("startAnimation");
                 if (Random.Range(0, 2) == 1)
                 {

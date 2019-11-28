@@ -10,6 +10,8 @@ TagManager:
   - ENEMY
   - RiffleButton
   - BUTTON
+  - LVLSELECTOR
+  - SHOPMASTER
   layers:
   - Default
   - TransparentFX
@@ -20,7 +22,7 @@ TagManager:
   - 
   - 
   - Enemy
-  - 
+  - Bomb
   - 
   - 
   - 

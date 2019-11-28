@@ -28,6 +28,7 @@ public static class SaveSystem
             PlayerStats data = formatter.Deserialize(stream) as PlayerStats;
             stream.Close();
             //loading to PlayerPrefs
+            /*
             PlayerPrefs.SetInt("hp", data.hp);
             PlayerPrefs.SetInt("lvl", data.lastFinishedLevel);
             PlayerPrefs.SetInt("gold", data.gold);
@@ -45,6 +46,7 @@ public static class SaveSystem
                 buffer += (int)item +"/";
              }
             PlayerPrefs.SetString("availableItems", buffer);
+            */
             return data;
 
         }
@@ -57,39 +59,8 @@ public static class SaveSystem
 
 }
 
-[System.Serializable]
-public class PlayerStats
-{
-    public int hp;
-    public int lastFinishedLevel = 0;
-    public int gold;
-    public PlayerItems[] equipedItems = new PlayerItems[3];
-    public List<PlayerItems> availableItems = new List<PlayerItems>();
 
-    public PlayerStats()
-    {
-        this.hp = 0;
-        this.lastFinishedLevel = 0;
-        this.gold = 0;
-        PlayerItems[] equip = { PlayerItems.NOITEM, PlayerItems.NOITEM, PlayerItems.NOITEM };
-        this.equipedItems = equip; 
-        this.availableItems = new List<PlayerItems>();
-    }
 
-    public PlayerStats(int hp, int lastLvl, int gold, PlayerItems[] equipedItems, List<PlayerItems> availableItems)
-    {
-        this.hp = hp;
-        this.lastFinishedLevel = lastLvl;
-        this.gold = gold;
-        this.equipedItems = equipedItems;
-        this.availableItems = availableItems;
-    }
-}
 
-public enum PlayerItems
-{
-    NOITEM,
-    Riffle
-}
 
 

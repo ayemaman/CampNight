@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class SimpleMob : Enemy
 {
-
+    private SpriteRenderer sr;
     private Transform playerPos;
     public float speed;
     private BoxCollider2D bc;
     private Rigidbody2D rb;
+    
     private bool left;
    
 
     private void Start()
     {
+        sr = GetComponent<SpriteRenderer>();
         playerPos = GameObject.FindGameObjectWithTag("Player").transform;
         if (playerPos == null)
         {
@@ -28,27 +30,42 @@ public class SimpleMob : Enemy
         else
         {
             left = false;
+            Vector3 Scaler = transform.localScale;
+            Scaler.x *= -1;
+            transform.localScale = Scaler;
         }
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (stats.canMove)
+
+        if (_flashTimer > 0)
         {
-            if (left)
-            {
-                rb.velocity = Vector2.right * speed * Time.deltaTime;
-            }
-            else
-            {
-                rb.velocity = Vector2.left * speed * Time.deltaTime;
-            }
-            CheckIfDestroy();
+            sr.enabled = !sr.enabled;
+            _flashTimer -= Time.deltaTime * 3;
+            rb.velocity = Vector2.zero;
         }
         else
         {
-            rb.velocity = Vector2.zero;
+            sr.enabled = true;
+
+            if (stats.canMove)
+            {
+                if (left)
+                {
+                    rb.velocity = Vector2.right * speed * Time.deltaTime;
+                }
+                else
+                {
+                    rb.velocity = Vector2.left * speed * Time.deltaTime;
+                }
+                CheckIfDestroy();
+            }
+            else
+            {
+                rb.velocity = Vector2.zero;
+            }
         }
     }
 
@@ -61,4 +78,6 @@ public class SimpleMob : Enemy
             GameMaster.HitEnemy(this.gameObject, 9001);
         }
     }
+    
+   
 }

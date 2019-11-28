@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5657466409096623344
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5657466409096623346}
+  - component: {fileID: 5657466409096623345}
+  m_Layer: 0
+  m_Name: LevelSelectMaster
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5657466409096623346
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5657466409096623344}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 949.3885, y: 549.3698, z: -140.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5657466409096623345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5657466409096623344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f967debd59cea0e4fbb29caee66e2760, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  areaName: {fileID: 0}
+  canvas: {fileID: 0}
+  text: {fileID: 0}
+  ZoneSelectCanvas: {fileID: 0}
+  LevelSelectCanvas: {fileID: 0}
+  LevelButtons:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  LevelSprites:
+  - open: {fileID: 21300000, guid: be4c87c7bf61c65448a4eb189c4bcf2d, type: 3}
+    closed: {fileID: 21300000, guid: 1c2af0a719e73dd4fb336644987e75f4, type: 3}
+  - open: {fileID: 0}
+    closed: {fileID: 0}
+  - open: {fileID: 0}
+    closed: {fileID: 0}
+  - open: {fileID: 0}
+    closed: {fileID: 0}
+  ZoneButtons:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  ZoneSprites:
+  - open: {fileID: 21300000, guid: f881983c83cd0f6498bb4bcbaa282d04, type: 3}
+    closed: {fileID: 21300000, guid: 710670e7aaf9fb443ade522b672523aa, type: 3}
+  - open: {fileID: 21300000, guid: e8393de91384aca49a5cd847a79b10d4, type: 3}
+    closed: {fileID: 21300000, guid: 968186f995f066f42a899631d07cbfce, type: 3}
+  - open: {fileID: 21300000, guid: ad99c2102ea1112438bea4e978b5df8b, type: 3}
+    closed: {fileID: 21300000, guid: 3920a4ee62120a64bae2a2ca6f9ac196, type: 3}
+  - open: {fileID: 21300000, guid: 168793783de289e43bfc1bedfcabf804, type: 3}
+    closed: {fileID: 21300000, guid: 689baa1944b3ccb41ab8692b4ed2e042, type: 3}
+  ZoneName:
+  - PURPLE FOREST
+  - FAMILY TRAIL
+  - MOUNTAINS
+  - THE GREAT OUTDOOR

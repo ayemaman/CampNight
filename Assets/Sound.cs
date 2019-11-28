@@ -37,8 +37,15 @@ public class Sound
         this.source.pitch = pitch*(1+Random.Range(-randomPitch/2f, randomPitch/2f));
         
         this.source.Play();
+        
     }
-    
+
+    public void Pause()
+    {
+        this.source.Pause();
+    }
+
+
     public void Stop()
     {
         this.source.Stop();

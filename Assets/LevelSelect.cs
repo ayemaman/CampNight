@@ -43,7 +43,8 @@ public class LevelSelect : MonoBehaviour
         LevelSelectCanvas.SetActive(false);
         ZoneSelectCanvas.SetActive(true);
 
-        int lastLVL = PlayerPrefs.GetInt("lvl");
+        int lastLVL = GameMaster.gm.playerStats.lastFinishedLevel;
+           // PlayerPrefs.GetInt("lvl");
         int zonesOpened = lastLVL / 3;
         int i;
         
@@ -67,7 +68,10 @@ public class LevelSelect : MonoBehaviour
         areaName.text = ZoneName[zone];
         ZoneSelectCanvas.SetActive(false);
         LevelSelectCanvas.SetActive(true);
-        int lastLVL = PlayerPrefs.GetInt("lvl");
+       
+
+        int lastLVL = GameMaster.gm.playerStats.lastFinishedLevel;
+            //PlayerPrefs.GetInt("lvl");
         if (lastLVL / 3 > zone)
         {
             for (int c = 0; c < 3; c++)
@@ -75,7 +79,7 @@ public class LevelSelect : MonoBehaviour
                 LevelButtons[c].interactable = true;
 
                 int levelToLoad = ((zone) * 3) + c + GameMaster.gm.NumberOfStartingLevels;
-
+                LevelButtons[c].onClick.RemoveAllListeners();
                 LevelButtons[c].onClick.AddListener(delegate { GameMaster.gm.LoadLevel(levelToLoad); });
                 LevelButtons[c].GetComponent<Image>().sprite = LevelSprites[zone].open;
             }
@@ -88,7 +92,7 @@ public class LevelSelect : MonoBehaviour
                 LevelButtons[i].interactable = true;
 
                 int levelToLoad = ((zone) * 3) + i + GameMaster.gm.NumberOfStartingLevels;
-
+                LevelButtons[i].onClick.RemoveAllListeners();
                 LevelButtons[i].onClick.AddListener(delegate { GameMaster.gm.LoadLevel(levelToLoad); });
                 LevelButtons[i].GetComponent<Image>().sprite = LevelSprites[zone].open;
             }

@@ -5,6 +5,8 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
 
+    private float flashTimer = 2f;
+    public float _flashTimer;
     [System.Serializable]
     public class EnemyStats
     {
@@ -13,31 +15,42 @@ public class Enemy : MonoBehaviour
         public bool canMove = true;
         public int points;
         public int spawnChance;
+
     }
     
     public EnemyStats stats = new EnemyStats();
     // Start is called before the first frame update
     void Start()
     {
+       
         
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     public void GetHit(int dmg)
-    {
+    { 
+        this._flashTimer = this.flashTimer;
         stats.hp -= dmg;
         if (stats.hp <= 0)
         {
-            Destroy(this.gameObject);
-            if (dmg < 9001)
+            BombardierBomb bomb = GetComponent<BombardierBomb>();
+            if (bomb!=null) 
             {
-                TouchScript.instance.comboScore += stats.points;
-                //GameMaster.addKill();
+                bomb.Multiply();
+            }
+            else
+            {
+                Destroy(this.gameObject);
+                if (dmg < 9001)
+                {
+                    TouchScript.instance.comboScore += stats.points;
+                    //GameMaster.addKill();
+                }
             }
         }
     }
@@ -57,6 +70,5 @@ public class Enemy : MonoBehaviour
       
     }
 
-  
    
 }

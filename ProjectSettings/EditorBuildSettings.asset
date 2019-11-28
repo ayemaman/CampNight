@@ -5,9 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MainMenu.unity
     guid: 9cec8bfcebef53a4c80ea875a6c3637a
+  - enabled: 1
+    path: Assets/Scenes/StartingScreen.unity
+    guid: 8bb8a15176d9dfc409961a214af1733f
   - enabled: 1
     path: Assets/Scenes/HowTo.unity
     guid: 9978bb4910862f542bb787537f39d2c9
@@ -18,12 +21,24 @@ EditorBuildSettings:
     path: Assets/Scenes/LvlSelect.unity
     guid: ac1ec9877e24fb84c9843c3f64dd17b0
   - enabled: 1
+    path: Assets/Scenes/shop.unity
+    guid: 0ff84509833871f43bf41f4a8c2e7992
+  - enabled: 1
     path: Assets/Scenes/FirstLevel.unity
     guid: 3e2cd56188894d4499074b3e5fc85fad
   - enabled: 1
     path: Assets/Scenes/SecondLevel.unity
-    guid: 41002ba253f910a45903126c73c28427
+    guid: 248587287fdbfed49ae62f2cf8ef47b1
   - enabled: 1
     path: Assets/Scenes/ThirdLevel.unity
-    guid: 5a422f0b6fe0d0245a65c4ef744ecb20
+    guid: 315399fd2978a8a4a9c33d3599b94a31
+  - enabled: 1
+    path: Assets/Scenes/DarkForestLevel.unity
+    guid: d5d1d59000ef00748962210b20bfbc97
+  - enabled: 1
+    path: Assets/Scenes/SunnyVillLevel.unity
+    guid: 5a7a3ffb1ca260c4eaf29c5233a166d4
+  - enabled: 1
+    path: Assets/Scenes/HellVillLevel.unity
+    guid: f29bafd6e0826f244a0b2c8764a65556
   m_configObjects: {}

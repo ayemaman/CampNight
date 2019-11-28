@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class FlyingMob : Enemy
 {
+    private SpriteRenderer sr;
     private Transform playerPos;
     private Rigidbody2D rb;
     private bool left;
-    public float speed;             
+    public float speed;
+    private float _speed;
     public float amplitude;     //  How high (or low) each wave would be - around 8 worked best
     public float frequency;     // How many waves would run in the given time (2 to 4 was used)
     private float startTime;
@@ -21,7 +23,7 @@ public class FlyingMob : Enemy
     // Start is called before the first frame update
     void Start()
     {
-        
+        sr = GetComponent<SpriteRenderer>();
         playerPos = GameObject.FindGameObjectWithTag("Player").transform;
         rb = GetComponent<Rigidbody2D>();
         gravityScaleBuffer = rb.gravityScale;
@@ -37,12 +39,26 @@ public class FlyingMob : Enemy
         else
         {
             left = false;
+            Vector3 Scaler = transform.localScale;
+            Scaler.x *= -1;
+            transform.localScale = Scaler;
         }
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (_flashTimer > 0)
+        {
+            sr.enabled = !sr.enabled;
+            _flashTimer -= Time.deltaTime * 3;
+            _speed = 0;
+        }
+        else
+        {
+            sr.enabled = true;
+            _speed = speed;
+        }
         if (stats.canMove)
         {
            
@@ -50,11 +66,11 @@ public class FlyingMob : Enemy
             float t = Time.time - startTime;
             if (!left)
             {
-                rb.velocity = directionLeft * speed + orthogonal2 * amplitude * Mathf.Sin(frequency * t);
+                rb.velocity = directionLeft * _speed + orthogonal2 * amplitude * Mathf.Sin(frequency * t);
             }
             else
             {
-                rb.velocity = directionRight * speed + orthogonal * amplitude * Mathf.Sin(frequency * t);
+                rb.velocity = directionRight * _speed + orthogonal * amplitude * Mathf.Sin(frequency * t);
             }
             CheckIfDestroy();
         }
@@ -74,6 +90,8 @@ public class FlyingMob : Enemy
             GameMaster.HitEnemy(this.gameObject, 9001);
         }
     }
+
+    
 }
 
 
