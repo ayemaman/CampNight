@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3468019376130598404}
   m_Layer: 9
   m_Name: Minibomb
-  m_TagString: Untagged
+  m_TagString: Minibomb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -139,7 +139,7 @@ MonoBehaviour:
     points: 0
     spawnChance: 0
   direction: 1
-  ExplosionRadius: 0
+  ExplosionRadius: 0.5
   up: 16
   left: -3
   right: 3

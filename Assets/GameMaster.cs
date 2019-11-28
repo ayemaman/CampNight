@@ -268,12 +268,12 @@ public class GameMaster : MonoBehaviour
             }
             if (scene.name == "ThirdLevel")
             {
-                Debug.Log(" gm.level3fly:" + gm.level3fly);
-                Spawner.instance.Prepare(new MobAmountsForLevel[] { new MobAmountsForLevel(0, 10), new MobAmountsForLevel(1, 5), new MobAmountsForLevel(2, 5), new MobAmountsForLevel(3, 10) });
+          
+                Spawner.instance.Prepare(new MobAmountsForLevel[] { new MobAmountsForLevel(0, 10), new MobAmountsForLevel(1, 5), new MobAmountsForLevel(2, 5), new MobAmountsForLevel(6, 5) });
             }
             if(scene.name == "DarkForestLevel")
             {
-                Spawner.instance.Prepare(new MobAmountsForLevel[] { new MobAmountsForLevel(0, 10), new MobAmountsForLevel(1, 10), new MobAmountsForLevel(2, 10), new MobAmountsForLevel(3,10) });
+                Spawner.instance.Prepare(new MobAmountsForLevel[] { new MobAmountsForLevel(0, 10), new MobAmountsForLevel(1, 10), new MobAmountsForLevel(2, 10) });
             }
             if (scene.name == "SunnyVillLevel")
             {

@@ -100,8 +100,8 @@ MonoBehaviour:
     dmg: 0
     canMove: 1
     points: 0
-    spawnChance: 0
-  speed: 2000
+    spawnChance: 5
+  speed: 500
 --- !u!50 &2065415250103968587
 Rigidbody2D:
   serializedVersion: 4

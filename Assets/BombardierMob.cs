@@ -11,10 +11,13 @@ public class BombardierMob : Enemy
     private GameObject bomb;
     
     public float speed;
-    private bool dropped = false;
+    public bool dropped = false;
+    public bool done = false;
 
     private bool left;
 
+    private float timerToFixRifle = 0.15f;
+    private float _TimerToFixRifle;
 
 
 
@@ -59,19 +62,34 @@ public class BombardierMob : Enemy
             transform.Translate(Vector2.left*speed);
         }
 
-        if(Vector2.Distance(new Vector2(transform.position.x,0),new Vector2(playerPos.position.x, 0))<0.2){
+        if (Vector2.Distance(new Vector2(transform.position.x, 0), new Vector2(playerPos.position.x, 0)) < 0.2)
+        {
             if (!dropped)
             {
                 dropped = true;
+                _TimerToFixRifle = timerToFixRifle;
                 if (bomb.transform.parent != null)
                 {
                     bomb.transform.parent = null;
                 }
-            
-                bomb.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
-                bomb.GetComponent<BombardierBomb>().growSize();
             }
+        }
 
+        if (dropped && !done)
+        {
+            if (_TimerToFixRifle > 0)
+            {
+                _TimerToFixRifle = -Time.deltaTime;
+            }
+            else
+            {
+                Rigidbody2D rbBomb = bomb.GetComponent<Rigidbody2D>();
+                rbBomb.bodyType = RigidbodyType2D.Dynamic;
+                rbBomb.gravityScale = 0.5f;
+                bomb.GetComponent<BombardierBomb>().growSize();
+                bomb.GetComponent<CircleCollider2D>().enabled = true;
+                done = true;
+            }
         }
         CheckIfDestroy();
     }

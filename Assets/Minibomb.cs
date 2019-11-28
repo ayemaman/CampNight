@@ -16,7 +16,6 @@ public class Minibomb : Enemy
     // Start is called before the first frame update
     void Start()
     {
-
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<CircleCollider2D>();
         col.enabled = true;
@@ -49,6 +48,14 @@ public class Minibomb : Enemy
         }
     }
 
+    private void FixedUpdate()
+    {
+        if (rb.velocity.y < -0.4)
+        {
+            rb.gravityScale = 0.5f;
+        }
+    }
+
 
     public enum Direction
     {
@@ -61,14 +68,16 @@ public class Minibomb : Enemy
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.name != "BombardierBomb" || collision.collider.name != "Minibomb")
+       
+        if(!collision.collider.CompareTag("Bombardier") && !collision.collider.CompareTag("BombardierBomb") && !collision.collider.CompareTag("Minibomb"))
         {
 
-            Collider2D[] collisions = Physics2D.OverlapCircleAll(transform.position, ExplosionRadius);
+            Collider2D[] collisions = Physics2D.OverlapCircleAll(collision.contacts[0].point, ExplosionRadius);
             foreach (Collider2D col in collisions)
             {
                 if (col.CompareTag("ENEMY"))
                 {
+                  
                     GameMaster.HitEnemy(col.gameObject, 5);
                 }
                 else if (col.CompareTag("Player"))
@@ -77,7 +86,8 @@ public class Minibomb : Enemy
                 }
             }
             //TODO SPAWN EXPLOSION PREFAB
-
+         
+            AudioManager.instance.PlaySound("knock_boom");
             Destroy(this.gameObject);
 
 

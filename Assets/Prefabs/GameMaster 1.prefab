@@ -1,0 +1,356 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &9080500213662203257
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9080500213662203251}
+  - component: {fileID: 9080500213662203137}
+  - component: {fileID: 9080500213662203136}
+  - component: {fileID: 9080500213662203166}
+  - component: {fileID: 9118492110455494651}
+  m_Layer: 0
+  m_Name: GameMaster 1
+  m_TagString: GM
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9080500213662203251
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9080500213662203257}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.7717904, y: -3.010228, z: -2.3046875}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9080500213662203137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9080500213662203257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04604202989673b4cb0ab5d3d40068c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerStats:
+    hp: 5
+    lastFinishedLevel: 0
+    gold: 0
+    equipedItems: 000000000000000000000000
+    availableItems: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  spawnPoint1: {fileID: 5825230865939927745, guid: 16c5e467bedd831498bf6a06a256262f,
+    type: 3}
+  spawnPoint2: {fileID: 3314367939619739522, guid: 6e4c5eec1d1f4734d9033f8ff956d62f,
+    type: 3}
+  timerOn: 0
+  roundTime: 30
+  roundFinished: 0
+  score: 0
+  tent: {fileID: 0}
+  TimerText: {fileID: 0}
+  KillText: {fileID: 0}
+  ComboText: {fileID: 0}
+  ComboTextAnimator: {fileID: 0}
+  buttonsPos: []
+  FirstButtonPos: {x: 0, y: 0, z: 0}
+  currentSlot: 0
+  namesAndDesc:
+  - name: Winchester
+    desc: Even tho it doesn't help much with combo meter, but it kills everyone in
+      one shot. Now go and give them the tase of iron!
+    price: 3
+    selected: {fileID: 21300000, guid: 7fa5d73344edb5c4eadee4da3329e29a, type: 3}
+    normal: {fileID: 21300000, guid: bba4657428cb8aa4c8044afccf448c4c, type: 3}
+    cd: 5
+  - name: Fly swatter
+    desc: "No, not that kind of SWAT that breaks into your house to kill your dog...
+      this one only breaks those pesky bugs backs. \nDrastically Increases area of
+      your attack"
+    price: 3
+    selected: {fileID: 21300000, guid: 29798f5fa4e348c4dbe672634a5f6c63, type: 3}
+    normal: {fileID: 21300000, guid: 559a81ac40e8215469d8eea468196f02, type: 3}
+    cd: 15
+  - name: 
+    desc: 
+    price: 0
+    selected: {fileID: 0}
+    normal: {fileID: 0}
+    cd: 0
+  - name: 
+    desc: 
+    price: 0
+    selected: {fileID: 0}
+    normal: {fileID: 0}
+    cd: 0
+  - name: 
+    desc: 
+    price: 0
+    selected: {fileID: 0}
+    normal: {fileID: 0}
+    cd: 0
+  - name: 
+    desc: 
+    price: 0
+    selected: {fileID: 0}
+    normal: {fileID: 0}
+    cd: 0
+  - name: 
+    desc: 
+    price: 0
+    selected: {fileID: 0}
+    normal: {fileID: 0}
+    cd: 0
+  - name: 
+    desc: 
+    price: 0
+    selected: {fileID: 0}
+    normal: {fileID: 0}
+    cd: 0
+  - name: 
+    desc: 
+    price: 0
+    selected: {fileID: 0}
+    normal: {fileID: 0}
+    cd: 0
+  - name: 
+    desc: 
+    price: 0
+    selected: {fileID: 0}
+    normal: {fileID: 0}
+    cd: 0
+  - name: 
+    desc: 
+    price: 0
+    selected: {fileID: 0}
+    normal: {fileID: 0}
+    cd: 0
+  - name: 
+    desc: 
+    price: 0
+    selected: {fileID: 0}
+    normal: {fileID: 0}
+    cd: 0
+  - name: 
+    desc: 
+    price: 0
+    selected: {fileID: 0}
+    normal: {fileID: 0}
+    cd: 0
+  - name: 
+    desc: 
+    price: 0
+    selected: {fileID: 0}
+    normal: {fileID: 0}
+    cd: 0
+  - name: 
+    desc: 
+    price: 0
+    selected: {fileID: 0}
+    normal: {fileID: 0}
+    cd: 0
+  - name: 
+    desc: 
+    price: 0
+    selected: {fileID: 0}
+    normal: {fileID: 0}
+    cd: 0
+  paused: 0
+  NumberOfStartingLevels: 5
+  currentLevel: 0
+  level1walk: 1000
+  level2walk: 1
+  level2jump: 20
+  level3walk: 0
+  level3jump: 0
+  level3fly: 2
+--- !u!114 &9080500213662203136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9080500213662203257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6d7920a7011f0f48af08c3320480933, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemsTimers:
+  - 0
+  - 0
+  - 0
+  itemsOnCdText:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  itemButtons:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  comboScore: 0
+  touchParticle: {fileID: 3267133159622171617, guid: c13c35482a36f18428c7ceef15a8eb76,
+    type: 3}
+  smokeParticle: {fileID: 8633272939202824638, guid: 07f538f2d66ac614dad30458fbd4c01a,
+    type: 3}
+  radius: 0.6
+  swatterRadius: 3
+  line: {fileID: 2887553766779790375, guid: 48ff043488b005f48b20d8503f2d880d, type: 3}
+  SwatterPrefab: {fileID: 0}
+  hitCombo: 0
+  buttonIsPressed: 0
+  currentItem: 0
+  buttonOverfLow: 2
+  RifleTimer: 0
+  RifleBetweenShotsTimer: 0
+  RifleStartYCorrection: 0.8
+  RifleShots: 5
+  firstPass: 0
+  FLYswatterSHOT: 2
+  SwatterTest: {fileID: 8626389954349461465, guid: d258bd0e5154aeb4bb9ff5f07365f1f4,
+    type: 3}
+--- !u!114 &9080500213662203166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9080500213662203257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b1e7f29631307f4ab9dfb8300ca7334, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: oink1
+    clip: {fileID: 8300000, guid: c746ab99b7a0647408a958dad635ef18, type: 3}
+    volume: 0.7
+    pitch: 1
+    randomVolume: 0.1
+    randomPitch: 0.1
+    loop: 0
+  - name: oink2
+    clip: {fileID: 8300000, guid: 380801de170abb84f9ed8a4ba1b4f56e, type: 3}
+    volume: 0.7
+    pitch: 1
+    randomVolume: 0.1
+    randomPitch: 0.1
+    loop: 0
+  - name: tap
+    clip: {fileID: 8300000, guid: b823e6e4b04d13844a85114b9a6f298e, type: 3}
+    volume: 0.7
+    pitch: 1
+    randomVolume: 0.1
+    randomPitch: 0.1
+    loop: 0
+  - name: ouch
+    clip: {fileID: 8300000, guid: ec8b68e29e9183e4a934c56a57eec772, type: 3}
+    volume: 0.7
+    pitch: 1
+    randomVolume: 0.1
+    randomPitch: 0.1
+    loop: 0
+  - name: forest
+    clip: {fileID: 8300000, guid: e9ed507799a59794598678362f2653d0, type: 3}
+    volume: 0.7
+    pitch: 1
+    randomVolume: 0.1
+    randomPitch: 0.1
+    loop: 1
+  - name: menu
+    clip: {fileID: 8300000, guid: df548fdba4ee2c94680b6e6a88979bc6, type: 3}
+    volume: 0.7
+    pitch: 1
+    randomVolume: 0.1
+    randomPitch: 0.1
+    loop: 1
+  - name: gameOver
+    clip: {fileID: 8300000, guid: bcd790330703fdc45b80534391371c54, type: 3}
+    volume: 0.7
+    pitch: 1
+    randomVolume: 0.1
+    randomPitch: 0.1
+    loop: 0
+  - name: rifleShot
+    clip: {fileID: 8300000, guid: 3f56e5993f3779a48b680a9a79954e85, type: 3}
+    volume: 0.7
+    pitch: 1
+    randomVolume: 0.1
+    randomPitch: 0.1
+    loop: 0
+  - name: rooster
+    clip: {fileID: 8300000, guid: 03ae752ad14b0674fa435e3548b30fee, type: 3}
+    volume: 0.7
+    pitch: 1
+    randomVolume: 0.1
+    randomPitch: 0.1
+    loop: 0
+  - name: slap
+    clip: {fileID: 8300000, guid: be745825e08e8814b9c7ee4fad1dc2f9, type: 3}
+    volume: 0.7
+    pitch: 1
+    randomVolume: 0.1
+    randomPitch: 0.1
+    loop: 0
+  - name: coins
+    clip: {fileID: 8300000, guid: adb96c1c8ee34dc4cad97509245a2000, type: 3}
+    volume: 0.7
+    pitch: 1
+    randomVolume: 0.1
+    randomPitch: 0.1
+    loop: 0
+  - name: knock_boom
+    clip: {fileID: 8300000, guid: 0f2dc345fe1257448851b1777802ed76, type: 3}
+    volume: 0.7
+    pitch: 1
+    randomVolume: 0.1
+    randomPitch: 0.1
+    loop: 0
+--- !u!114 &9118492110455494651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9080500213662203257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29efac88d69a67c4595dc38fe7b18fbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPointLeftBottom: {fileID: 0}
+  spawnPointRightBottom: {fileID: 0}
+  spawnPointLeftMiddle: {fileID: 0}
+  spawnPointRightMiddle: {fileID: 0}
+  spawnPointLeftTop: {fileID: 0}
+  spawnPointRightTop: {fileID: 0}
+  spawnTimer: 0.2
+  spawnChance: 80
+  spawnChanceChange: 10
+  spawnChanceTimer: 10
+  ready: 0
+  currentEnemies: []
+  enemyAmount: 
+  enemyAmountStart: 
+  enemies:
+  - {fileID: 1195952567841612173, guid: d80dc700ddfa3c444b519c0170958833, type: 3}
+  - {fileID: 2433450061319118149, guid: 5dcec375fbac2b04f90adc676437a0e3, type: 3}
+  - {fileID: 6723276990919845533, guid: 1d1ec9b71d487bb4fba36db800be9342, type: 3}
+  - {fileID: 8867989644403558702, guid: 132833d0dc2c4e5458ecebde2c11af0d, type: 3}
+  - {fileID: 3728452741822211667, guid: 0ed38a0729b38284caea70f11c74a2a1, type: 3}
+  - {fileID: 2065415250103968588, guid: 3201dbd192057f240aadc198eeae7405, type: 3}
+  - {fileID: 4008201303150133698, guid: 1dfd03d477b113547931da7fdbd0bdfd, type: 3}
+  - {fileID: 4058260484635837824, guid: 07051bf997b5f8645abb6a5305b5e3ce, type: 3}

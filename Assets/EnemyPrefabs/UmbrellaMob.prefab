@@ -147,7 +147,7 @@ MonoBehaviour:
     dmg: 0
     canMove: 1
     points: 0
-    spawnChance: 0
+    spawnChance: 5
   speed: 5
   upForce: 0.04
   testTimer: 0.5

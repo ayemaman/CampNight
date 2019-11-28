@@ -100,7 +100,7 @@ MonoBehaviour:
     dmg: 0
     canMove: 1
     points: 0
-    spawnChance: 0
+    spawnChance: 5
   angle: 10
   radius: 10
   angleSpeed: 50

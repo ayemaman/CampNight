@@ -124,7 +124,7 @@ MonoBehaviour:
     canMove: 1
     points: 1
     spawnChance: 10
-  speed: 100
+  speed: 0
 --- !u!61 &5254185865051668225
 BoxCollider2D:
   m_ObjectHideFlags: 0

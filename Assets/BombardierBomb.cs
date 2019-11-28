@@ -35,20 +35,19 @@ public class BombardierBomb : Enemy
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.name != "Bombardier")
+        
+        if (!collision.collider.CompareTag("Bombardier"))
         {
-
-            Debug.Log("Collison: " + collision.collider.name);
             grow = false;
             
             if (collision.collider.CompareTag("Player"))
             {
 
                 GameMaster.DamagePlayer(stats.dmg);
-                GameMaster.HitEnemy(this.gameObject, 9001);
+                Destroy(this.gameObject);
             }
             else {
-                
+              
                 Multiply();
             }
         }
@@ -69,6 +68,7 @@ public class BombardierBomb : Enemy
         bomb3.GetComponent<Minibomb>().SetDirection(Minibomb.Direction.Right);
         bomb3.transform.localScale = new Vector3(bomb3.transform.localScale.x * ratio, bomb3.transform.localScale.y * ratio, 0);
         bomb3.GetComponent<CircleCollider2D>().enabled = true;
+    
         Destroy(this.gameObject);
     }
 }

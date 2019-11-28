@@ -117,9 +117,10 @@ public class Spawner : MonoBehaviour
         
         for (int i = 0; i < mobs.Length; i++)
         {
-            instance.currentEnemies[i] = enemies[i];
+            instance.currentEnemies[i] = instance.enemies[mobs[i].mobNum];
+            Debug.Log(currentEnemies[i]);
             instance.enemyAmount[i] = mobs[i].amount;
-            instance.totalChance += enemies[i].stats.spawnChance;
+            instance.totalChance += instance.enemies[i].stats.spawnChance;
 
         }
         instance.enemyAmountStart = new int[mobs.Length];
@@ -241,7 +242,7 @@ public class Spawner : MonoBehaviour
         
         if (notFound)
         {
-            Debug.Log("Gonna check for mob on pos:" + (buff - 1));
+       
             if (spawnPoint == 0)
             {
                 if (CheckIfSpawnsForMobLeft(buff - 1))

@@ -12,6 +12,9 @@ TagManager:
   - BUTTON
   - LVLSELECTOR
   - SHOPMASTER
+  - Bombardier
+  - BombardierBomb
+  - Minibomb
   layers:
   - Default
   - TransparentFX
